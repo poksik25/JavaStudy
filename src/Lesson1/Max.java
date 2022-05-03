@@ -4,7 +4,7 @@ import java.util.Arrays;
 
 public class Max {
     public static void main(String[] args) {
-        int[] array1 = {20, 300, 200, 12, 300, 300, 300, 300,11,11,11,4000,400,3,3,322,4000,4000,4};
+        int[] array1 = {1,1,20,1,1};
         int[] b = {2, 3, 100, 6, 120, 100, 100, 2,120,120,120,22,22,22,1201,12};
 
         int maxValueOfArrayA = getMaxValueFromArray(array1);
@@ -72,12 +72,11 @@ public class Max {
     public static int[] deleteMaxElement(int[] array, int countLength, int max) {
 
         int[] array1 = new int [array.length - countLength];
-
-        for (int i = 0; i < array1.length; i++) {
+        int currentIndexOfArray1=0;
+        for (int i = 0; i < array.length; i++) {
             if (array[i] != max) {
-                for (int j = 0; j < array.length - countLength; j++) {
-                    array1[i] = array[i];
-                }
+                array1[currentIndexOfArray1]=array[i];
+                currentIndexOfArray1++;
             }
         }
         System.out.println(Arrays.toString(array1));
