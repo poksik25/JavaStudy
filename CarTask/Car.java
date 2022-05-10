@@ -1,9 +1,27 @@
 package Lesson1.CarTask;
 
+import java.util.Arrays;
+
 class Car {
     private String carBrand;
-    private int numberOfCar;
+    private String numberOfCar;
     private double mileage;
+
+    public Car(String carBrand, String numberOfCar, double mileage) {
+        if (numberOfCar.length() == 8) {
+            this.numberOfCar = numberOfCar;
+        } else {
+            System.err.println("Must be in this form: AA1111BB");
+        }
+        this.carBrand = carBrand;
+        if (mileage >= 0) {
+            this.mileage = mileage;
+        } else {
+            System.err.println("Mileage cannot be less than 0!");
+        }
+
+
+    }
 
     public void setCarBrand(String carBrand) {
         this.carBrand = carBrand;
@@ -13,23 +31,23 @@ class Car {
         return carBrand;
     }
 
-    public void setNumberOfCar(int numberOfCar) {
-        if (numberOfCar > 1000 && numberOfCar < 9999) {
+    public void setNumberOfCar(String numberOfCar) {
+        if (numberOfCar.length() == 8) {
             this.numberOfCar = numberOfCar;
         } else {
-            System.out.println("Номер машины должен быть состоять из 4-х цифр");
+            System.err.println("Must be in this form: AA1111BB");
         }
     }
 
-    public int getNumberOfCar() {
+    public String getNumberOfCar() {
         return numberOfCar;
     }
 
-    public void setMileage(double mileage) {
-        if (mileage > 0) {
+    public void setMileage(double mileage, int numberOfCar) {
+        if (mileage >= 0) {
             this.mileage = mileage;
         } else {
-            System.out.println("Пробег не может быть отрицательным!");
+            System.err.println("Mileage cannot be less than 0!");
         }
     }
 
@@ -38,13 +56,24 @@ class Car {
     }
 
     public void getInfo() {
-        System.out.println("Марка машины - " + carBrand + " c номером:" + numberOfCar + ", и пробегом - " + mileage + " миль");
+        System.out.println("Сar brand - " + carBrand + " with number:" + numberOfCar + ", and " +
+                " mileage - " + mileage + " mille");
     }
+
 
     public double rideCar(double rideMileage) {
         mileage = mileage + rideMileage;
         return mileage;
     }
 
+    public String toString() {
+        return "Car{"
+                + "brandCar = " + carBrand
+                + ", number of Car = " + numberOfCar
+                + ", mileage = " + mileage
+                + '}';
+    }
+
 }
+
 
