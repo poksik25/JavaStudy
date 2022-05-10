@@ -16,6 +16,8 @@ public class VariousNumbers {
         }
         System.out.println(counter);
 
+        System.out.println("тренировка");
+
         // System.out.println("value\t count");
         for (int i = 0; i < counter.length; i++) {
             System.out.println(i + "\t" + counter[i]);
