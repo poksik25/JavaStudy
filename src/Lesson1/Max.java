@@ -4,7 +4,7 @@ import java.util.Arrays;
 
 public class Max {
     public static void main(String[] args) {
-        int[] array1 = {20, 300, 200, 12, 300, 300, 300, 300,11,11,11,4000,400,3,3,322,4000,4000,4};
+        int[] array1 = {1,1,1,20,1,3,3,};
         int[] b = {2, 3, 100, 6, 120, 100, 100, 2,120,120,120,22,22,22,1201,12};
 
         int maxValueOfArrayA = getMaxValueFromArray(array1);

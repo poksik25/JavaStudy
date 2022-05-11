@@ -10,13 +10,13 @@ public class TEST {
             System.out.println("Original Array is: "+ Arrays.toString(arr));
 
             for (int i = 0; i < arr.length-1; i++) {
-                if(arr[i] == elementToBeDeleted){
+                if (arr[i] == elementToBeDeleted) {
                     newArr = new int[arr.length - 1];
-                    for(int index = 0; index < i; index++){
+                    for (int index = 0; index < i; index++) {
                         newArr[index] = arr[index];
                     }
-                    for(int j = i; j < arr.length - 1; j++){
-                        newArr[j] = arr[j+1];
+                    for (int j = i; j < arr.length - 1; j++) {
+                        newArr[j] = arr[j + 1];
                     }
                     break;
                 }

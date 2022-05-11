@@ -1,24 +1,40 @@
 package Lesson1;
 
-import java.lang.reflect.Array;
 import java.util.Arrays;
-import java.util.Random;
-import java.util.Scanner;
 
 public class VariousNumbers {
     public static void main(String[] args) {
+        int[] array = {3, 2, 3, 4, 4, 4, 6, 7, 9, 9, 2};
 
-        int[] arr = {9, 0, 8, 0, 13, 2, 4, 42, 5, 7, 8, 4, 3, 9, 2, 1, 7, 0, 6, 4, 1, 2};
-        int[] counter = new int[10];
-
-        for (int i = 0; i < arr.length; i++) {
-            counter[arr[i]]++;
+        int count = 0;
+        for (int i = 0; i < array.length; i++) {
+            for (int j = i + 1; j < array.length; j++) {
+                if (array[i] == array[j]) {
+                    count = count + 1;
+                    break;
+                }
+            }
         }
-        System.out.println(counter);
+        int lengthOfUniqueArray = array.length - count;
 
-        // System.out.println("value\t count");
-        for (int i = 0; i < counter.length; i++) {
-            System.out.println(i + "\t" + counter[i]);
-        }
+        int[] uniqueArray = new int[lengthOfUniqueArray];
+
+        System.out.println(getUniqueQuantities(array, uniqueArray));
     }
+
+    public static int[] getUniqueQuantities(int[] initialArr, int[] uniqueArr) {
+        int[] uniqueQuantities = new int[uniqueArr.length];
+
+        for (int i = 0; i < uniqueQuantities.length; i++) {
+            for (int j = 0; j < initialArr.length; j++) {
+                if (uniqueArr[i] == initialArr[j]) {
+                    uniqueQuantities[i]++;
+                }
+            }
+        }
+
+        return uniqueQuantities;
+    }
+
 }
+
